@@ -3,22 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <title>Southern Cross Bank - Registration</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0a1128;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    padding: 32px 28px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+  h1 {
+    color: #0a1128;
+    font-size: 22px;
+    margin-top: 0;
+  }
+  p {
+    font-size: 14px;
+    color: #222;
+    line-height: 1.5;
+  }
+  .highlight {
+    font-weight: bold;
+    color: #1e3a8a;
+  }
+  .footer-note {
+    font-size: 11px;
+    color: #666;
+    margin-top: 24px;
+    border-top: 1px solid #eee;
+    padding-top: 12px;
+  }
+</style>
 </head>
 <body>
-
-<h1>Thanks!</h1>
-<p>I have now recorded your banking client id as: <span id="clientNumber"></span>!</p>
-<p>And your password as: <span id="password"></span></p>
-<p>Plus if you have used this password on other sites I may try to login to those with these details!</p>
-<hr />
-<p><em>This is a teaching demonstration for a fictional bank. No real data has been collected or stored anywhere else.</em></p>
+<div class="card">
+  <h1>Thanks!</h1>
+  <p>I have now recorded your banking client id as: <span class="highlight" id="clientNumber"></span>!</p>
+  <p>And your password as: <span class="highlight" id="password"></span></p>
+  <p>Plus if you have used this password on other sites I may try to login to those with these details!</p>
+  <p class="footer-note"><em>This is a teaching demonstration for a fictional bank. No real data has been collected or stored anywhere else.</em></p>
+</div>
 
 <script>
-  // Read the values straight out of the URL's query string and print them
-  // to the page. This is the whole "lesson": whatever you typed above is
-  // sitting in plain text in the address bar for anyone (or anything) to see.
   const params = new URLSearchParams(window.location.search);
-
   document.getElementById('clientNumber').textContent = params.get('clientNumber') || '';
   document.getElementById('password').textContent = params.get('password') || '';
 </script>
