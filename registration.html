@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Southern Cross Bank - Registration</title>
+</head>
+<body>
+
+<h1>Thanks!</h1>
+<p>I have now recorded your banking client id as: <span id="clientNumber"></span>!</p>
+<p>And your password as: <span id="password"></span></p>
+<p>Plus if you have used this password on other sites I may try to login to those with these details!</p>
+<hr />
+<p><em>This is a teaching demonstration for a fictional bank. No real data has been collected or stored anywhere else.</em></p>
+
+<script>
+  // Read the values straight out of the URL's query string and print them
+  // to the page. This is the whole "lesson": whatever you typed above is
+  // sitting in plain text in the address bar for anyone (or anything) to see.
+  const params = new URLSearchParams(window.location.search);
+
+  document.getElementById('clientNumber').textContent = params.get('clientNumber') || '';
+  document.getElementById('password').textContent = params.get('password') || '';
+</script>
+
+</body>
+</html>
